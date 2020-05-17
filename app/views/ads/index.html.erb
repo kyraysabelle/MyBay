@@ -1,0 +1,26 @@
+<div class="container-fluid">
+<h5> List of Ads </h5>
+
+<table class="table table-bordered">
+  <tr>  
+    <th>Name</th>
+    <th>Description</th>
+    <th>Price</th>
+    <th>Seller ID</th>
+    <th>Email</th>
+    <th>Image URL</th>
+  </tr>
+<%@ads.each do |ad|%>  <tr>
+  <td> <%= ad.name %> </td>
+  <td> <%= ad.desc %> </td>
+  <td> <%= ad.price %> </td>
+  <td> <%= ad.seller_id %> </td>
+  <td> <%= ad.email %> </td>
+  <td> <img src="<%= ad.img_url %>" width="50" height="50"> </td>
+  <td> <a href="ads/<%= ad.id %>"> <button>SHOW</button></a> </td>
+  <td> <a href="/ads/edit/<%= ad.id %>"> <button>EDIT</button></a> </td>
+  <td> <a href="/ads/delete/<%= ad.id %>"> <button>DELETE</button></a> </td> </tr>
+<%end%>
+
+</table>
+</div>
